@@ -10,6 +10,7 @@ import Carros from './paginas/Carros';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Contador from './paginas/Contador';
 import Filmespopulares from './paginas/filmes/Filmespopulares';
+import Filmesdetalhes from './paginas/filmes/Filmesdetalhes';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
     <Route path="/objeto" element={<Objeto/>} />
     <Route path="/contador" element={<Contador/>} />
     <Route path="/pagina1" element={<Pagina1/>} />
-    <Route path="filmespopulares" element={<Filmespopulares/>} />
+    <Route path="/filmespopulares" element={<Filmespopulares/>} />
+    <Route path="/filmes/:id" element={<Filmesdetalhes/>} />
     </Routes>
 
     </BrowserRouter>

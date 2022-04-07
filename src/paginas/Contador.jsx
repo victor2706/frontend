@@ -11,21 +11,22 @@ const Contador = () => {
         setnumber(++New)
         console.log(++New)
     }
+    let [men, setnumber1] = useState (10000)
+
+    function menos(){
+        setnumber1(--men)
+        console.log(--men)
+    }
   return (
       <Container>
           <div>
               <h1>Contador</h1>
-
-                  {New}
-                  <Button variant="success" onClick={mais}>+</Button>
-
+                  <p><h3>SOMA: <Button variant="success" onClick={mais}>{New}</Button></h3></p>
               </div>
               <div>
               <h1>Contador</h1>
 
-                  {New}
-                  <Button variant="warning" onClick={mais}>-</Button>
-
+                  <p><h3>Subtração: <Button variant="warning" onClick={menos}>{men}</Button></h3></p>
               </div>
     
       </Container>
