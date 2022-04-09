@@ -3,28 +3,26 @@ import { Container, NavItem, Card, Button, Row, Col, link } from 'react-bootstra
 import { Link } from 'react-router-dom'
 import apiFilmes from '../../Serviços/apiFilmes'
 
-const Filmespopulares = () => {
+const FilmesCartaz = () => {
+  const [cartaz, setCartaz] = useState([])
 
-    const [popular, setPopulares] = useState([])
-
-    useEffect(() => {
-       //const promessa = apiFilmes.get('movie/popular')
-       apiFilmes.get('movie/popular?language=pt-BR').then(resultado =>{
-        
-        setPopulares(resultado.data.results) 
-       })
-       //promessa.then(resultado=>{
-
+  useEffect(() => {
+     //const promessa = apiFilmes.get('movie/popular')
+     apiFilmes.get('movie/now_playing?language=pt-BR').then(resultado =>{
       
-      //})
-    }, [])
+      setCartaz(resultado.data.results) 
+     })
+     //promessa.then(resultado=>{
 
+    
+    //})
+  }, [])
 
 
   return (
-      <div>
-        <Row>
-              {popular.map(item => (
+  <div>
+    <Row>
+    {cartaz.map(item => (
               <Col md={3} className="md-6">
                 <Card>
                 <Card.Body>
@@ -33,14 +31,14 @@ const Filmespopulares = () => {
                   <Card.Text>
                     {item.original_title}
                   </Card.Text>
-                  <Link className="btn btn-danger" to={"/popular/" + item.id} >Mais Informações</Link>
+                  <Link className="btn btn-danger" to={"/cartaz/" + item.id} >Mais Informações</Link>
                 </Card.Body>
               </Card>
               </Col>
               ))}
-              </Row>
-      </div>
-  )
+    </Row>
+  </div>
+)
 }
 
-export default Filmespopulares
+export default FilmesCartaz

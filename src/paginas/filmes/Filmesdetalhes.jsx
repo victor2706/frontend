@@ -12,7 +12,7 @@ const Filmesdetalhes = () => {
 
   useEffect(() => {
      //const promessa = apiFilmes.get('movie/popular')
-     apiFilmes.get('movie/' + params.id + 'language=pt-BR').then(resultado =>{
+     apiFilmes.get('movie/' + params.id + '?language=pt-BR').then(resultado =>{
       
       setFilme(resultado.data) 
      })
