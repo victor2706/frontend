@@ -26,7 +26,7 @@ function App() {
     <Route path="/array" element={<Array/>} />
     <Route path="/objeto" element={<Objeto/>} />
     <Route path="/contador" element={<Contador/>} />
-    <Route path="/pagina1" element={<Pagina1/>} />
+    <Route path="/Pagina1" element={<Pagina1/>} />
     <Route path="/Filmespopulares" element={<Filmespopulares/>} />
     <Route path="/filmes/:id" element={<Filmesdetalhes/>} />
     <Route path="/FilmesCartaz" element={<FilmesCartaz/>} />
