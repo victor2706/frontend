@@ -45,7 +45,7 @@ const Filmesdetalhes = () => {
                     
                     <p><strong>Gêneros: </strong>
                         {filmes.genres.map(item => (
-                            <span>{item.name}, </span>
+                            <span>{item.name} </span>
                         ))}
                     </p>
 

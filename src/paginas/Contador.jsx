@@ -17,18 +17,18 @@ const Contador = () => {
         setnumber1(--men)
         console.log(--men)
     }
+    
   return (
       <Container>
           <div>
               <h1>Contador</h1>
-                  <p><h3>SOMA: <Button variant="success" onClick={mais}>{New}</Button></h3></p>
+                  <p><h3>ADIÇÃO: <Button variant="success" onClick={mais}>{New}</Button></h3></p>
               </div>
               <div>
-              <h1>Contador</h1>
+              <h1>Contador -</h1>
 
-                  <p><h3>Subtração: <Button variant="warning" onClick={menos}>{men}</Button></h3></p>
+                  <p><h3>SUBTRAÇÃO: <Button variant="warning" onClick={menos}>{men}</Button></h3></p>
               </div>
-    
       </Container>
   )
 }
