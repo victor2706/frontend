@@ -22,6 +22,7 @@ const FilmesCartaz = () => {
   return (
   <div>
     <Row>
+    <h1>Filmes em Cartaz</h1>
     {cartaz.map(item => (
               <Col md={3} className="md-6">
                 <Card>
@@ -31,7 +32,7 @@ const FilmesCartaz = () => {
                   <Card.Text>
                     {item.original_title}
                   </Card.Text>
-                  <Link className="btn btn-danger" to={"/cartaz/" + item.id} >Mais Informações</Link>
+                  <Link className="btn btn-danger" to={"/filmes/" + item.id} >Mais Informações</Link>
                 </Card.Body>
               </Card>
               </Col>

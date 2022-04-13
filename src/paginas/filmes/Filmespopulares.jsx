@@ -24,6 +24,7 @@ const Filmespopulares = () => {
   return (
       <div>
         <Row>
+          <h1>Filmes Populares</h1>
               {popular.map(item => (
               <Col md={3} className="md-6">
                 <Card>
