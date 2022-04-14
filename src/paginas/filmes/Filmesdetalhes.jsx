@@ -6,59 +6,75 @@ import apiFilmes from '../../Serviços/apiFilmes'
 
 const Filmesdetalhes = () => {
 
-  const params = useParams()
+    const params = useParams()
 
-  //console.log(params)
-  const [filmes, setFilme] = useState([])
+    const [filme, setFilme] = useState({})
+    const [atores, setAtores] = useState([])
+    const [elenco, setElenco] = useState([])
 
-  useEffect(() => {
-     //const promessa = apiFilmes.get('movie/popular')
-     apiFilmes.get('movie/' + params.id + '?language=pt-BR').then(resultado =>{
-      
-      setFilme(resultado.data) 
-     })
-     //promessa.then(resultado=>{
+    useEffect(() => {
+        apiFilmes.get('movie/' + params.id + '?language=pt-BR').then(resultado => {
+            setFilme(resultado.data)
+        })
 
-    
-    //})
-  }, [])
-  return (
-    <div>
+        apiFilmes.get('movie/' + params.id + '/credits?language=pt-BR').then(resultado => {
+            setAtores(resultado.data.cast)
+            setElenco(resultado.data.crew)
+        })
+    }, [])
 
-    {!filmes.id && <h1>Carregando... Aguarde!</h1>}
 
-    {filmes.id &&
+    return (
         <div>
-            <h1>{filmes.title}</h1>
 
-            <Row>
-                <Col md={4}>
-                    <Card>
-                        <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500/' + filmes.poster_path} />
-                    </Card>
-                </Col>
-                <Col md={8}>
-                    <p><strong>Título Original: </strong>{filmes.original_title}</p>
-                    <p><strong>Popularidade: </strong>{filmes.popularity}</p>
-                    <p><strong>Data de Lançamento: </strong>{filmes.release_date}</p>
-                    <p><strong>Orçamento: </strong>{filmes.budget}</p>
-                    
-                    <p><strong>Gêneros: </strong>
-                        {filmes.genres.map(item => (
-                            <span>{item.name} </span>
-                        ))}
-                    </p>
+            {!filme.id && <h1>Carregando... Aguarde!</h1>}
 
-                    <p><strong>Sinopse: </strong>{filmes.overview}</p>
+            {filme.id &&
+                <div>
+                    <h1>{filme.title}</h1>
 
-                    <Link className='btn btn-danger' to={-1}>Retornar</Link>
+                    <Row>
+                        <Col md={4}>
+                            <Card>
+                                <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500/' + filme.poster_path} />
+                            </Card>
+                        </Col>
+                        <Col md={8}>
+                            <p><strong>Título Original: </strong>{filme.original_title}</p>
+                            <p><strong>Popularidade: </strong>{filme.popularity}</p>
+                            <p><strong>Data de Lançamento: </strong>{filme.release_date}</p>
+                            <p><strong>Orçamento: </strong>{filme.budget}</p>
 
-                </Col>
-            </Row>
+                            <p><strong>Gêneros: </strong>
+                                {filme.genres.map(item => (
+                                    <span key={item.id}>{item.name}, </span>
+                                ))}
+                            </p>
+
+                            <p><strong>Sinopse: </strong>{filme.overview}</p>
+
+                            <Link className='btn btn-primary' to={-1}>Voltar</Link>
+
+                        </Col>
+                        <Col md={12} className="mt-3">
+                            <h1>Atores</h1>
+                        </Col>
+                        <Row>
+                            {atores.map(item => (
+                                <Col className="mb-3" md={2} key={item.id}>
+                                    <Link to={'/atores/' + item.id}>
+                                        <Card title={item.name}>
+                                            <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500/' + item.profile_path} />
+                                        </Card>
+                                    </Link>
+                                </Col>
+                            ))}
+                        </Row>
+                    </Row>
+                </div>
+            }
         </div>
-    }
-</div>
-)
+    )
 }
 
 export default Filmesdetalhes

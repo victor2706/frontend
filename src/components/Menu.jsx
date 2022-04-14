@@ -17,8 +17,13 @@ const Menu = () => {
             <Link className="dropdown-item" to="/pagina1">Página 1</Link>
             <Link className="dropdown-item" to="/contador">Contador</Link>
             </NavDropdown>
-            <NavDropdown title="Classificados" className="show" id="basic-nav-dropdown">
+            <NavDropdown title="FILMES" className="show" id="basic-nav-dropdown">
               <Link className="dropdown-item" to="/filmespopulares">Filmes Populares</Link>
+              <Link className="dropdown-item" to="/filmesCartaz">Filmes Cartaz</Link>
+              <Link className="dropdown-item" to="/filmesLancamento">Filmes Lançamento</Link>
+            </NavDropdown>
+            <NavDropdown title="SERIES DE TV" className="show" id="basic-nav-dropdown">
+              <Link className="dropdown-item" to="/Seriespopulares">Series Populares</Link>
               <Link className="dropdown-item" to="/filmesCartaz">Filmes Cartaz</Link>
               <Link className="dropdown-item" to="/filmesLancamento">Filmes Lançamento</Link>
             </NavDropdown>

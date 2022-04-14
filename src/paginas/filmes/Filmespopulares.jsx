@@ -34,7 +34,7 @@ const Filmespopulares = () => {
                   <Card.Text>
                     {item.original_title}
                   </Card.Text>
-                  <Link className="btn btn-danger" to={"/popular/" + item.id} >Mais Informações</Link>
+                  <Link className="btn btn-danger" to={"/filmes/" + item.id} >Mais Informações</Link>
                 </Card.Body>
               </Card>
               </Col>
