@@ -23,9 +23,9 @@ const Menu = () => {
               <Link className="dropdown-item" to="/filmesLancamento">Filmes Lançamento</Link>
             </NavDropdown>
             <NavDropdown title="SERIES DE TV" className="show" id="basic-nav-dropdown">
-              <Link className="dropdown-item" to="/Seriespopulares">Series Populares</Link>
-              <Link className="dropdown-item" to="/filmesCartaz">Filmes Cartaz</Link>
-              <Link className="dropdown-item" to="/filmesLancamento">Filmes Lançamento</Link>
+              <Link className="dropdown-item" to="/SeriesPopulares">Series Populares</Link>
+              <Link className="dropdown-item" to="/SerienoAr">Series no Ar</Link>
+              <Link className="dropdown-item" to="/SerieEstrelandoHoje">Serie Estrelando Hoje</Link>
             </NavDropdown>
           </Nav>
         </Container>

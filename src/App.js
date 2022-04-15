@@ -14,6 +14,10 @@ import Filmesdetalhes from './paginas/filmes/Filmesdetalhes';
 import FilmesCartaz from './paginas/filmes/FilmesCartaz';
 import FilmesLancamento from './paginas/filmes/FilmesLancamento';
 import AtoresDetalhes from "./paginas/atores/AtoresDetalhes";
+import SeriesPopulares from './paginas/series/SeriesPopulares';
+import SerienoAr from './paginas/series/SerienoAr';
+import SerieEstrelandoHoje from './paginas/series/SerieEstrelandoHoje';
+import SeriesDetalhes from "./paginas/series/SeriesDetalhes";
 
 function App() {
   return (
@@ -33,6 +37,10 @@ function App() {
     <Route path="/FilmesCartaz" element={<FilmesCartaz/>} />
     <Route path="/FilmesLancamento" element={<FilmesLancamento/>} />
     <Route path="/atores/:id" element={<AtoresDetalhes />} />
+    <Route path="/SeriesPopulares" element={<SeriesPopulares />} />
+    <Route path="/SerienoAr" element={<SerienoAr />} />
+    <Route path="/SerieEstrelandoHoje" element={<SerieEstrelandoHoje />} />
+    <Route path="/series/:id" element={<SeriesDetalhes />} />
     </Routes>
 
     </BrowserRouter>
