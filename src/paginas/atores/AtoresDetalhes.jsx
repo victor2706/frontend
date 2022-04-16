@@ -39,7 +39,7 @@ const AtoresDetalhes = () => {
                             <p><strong>Biografia </strong>{ator.biography}</p>
                         </Col>
                         <Col md={12} className="mt-3">
-                            <h1>Filmes</h1>
+                            <h1>Participações/Protagonista</h1>
                         </Col>
                         <Row>
                             {filmes.map(item => (
