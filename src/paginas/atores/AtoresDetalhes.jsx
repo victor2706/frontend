@@ -26,7 +26,7 @@ const AtoresDetalhes = () => {
 
             {ator.id &&
                 <div>
-                    <h1>{ator.name}</h1>
+                    <h1>Ator</h1>
                     <Row>
                         <Col md={4}>
                             <Card>
@@ -34,6 +34,7 @@ const AtoresDetalhes = () => {
                             </Card>
                         </Col>
                         <Col md={8}>
+                            <p><strong>Nome:</strong>{ator.name}</p>
                             <p><strong>Data de Nascimento </strong>{ator.birthday}</p>
                             <p><strong>Local de Nascimento </strong>{ator.place_of_birth}</p>
                             <p><strong>Biografia </strong>{ator.biography}</p>
