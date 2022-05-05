@@ -6,6 +6,7 @@ import apiFilmes from '../../Serviços/apiFilmes'
 const Filmespopulares = () => {
 
     const [popular, setPopulares] = useState([])
+    const [query, setQuery] = useState([])
 
     useEffect(() => {
        //const promessa = apiFilmes.get('movie/popular')
@@ -18,13 +19,21 @@ const Filmespopulares = () => {
       
       //})
     }, [])
-
-
+  function pesquisar (event) {
+    setQuery(event.target.value) 
+  }
+  function pesquisarBotao (event) {
+    apiFilmes.get('search/movie?language=pt-BR&query=' + query).then(resultado =>{
+      setPopulares(resultado.data.results) 
+     })
+  }
 
   return (
       <div>
         <Row>
-          <h1>Filmes Populares</h1>
+          <h1 class="text-center">Filmes Populares</h1>
+          <input type="Text" onChange={pesquisar}></input>
+        <button onClick={pesquisarBotao}>Pesquisar</button>
               {popular.map(item => (
               <Col md={3} className="md-6">
                 <Card>

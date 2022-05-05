@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card, Carousel, Container, Nav, Navbar, Row, link, NavDropdown} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
+
+
+
+
 const Menu = () => {
+  const [query, setFilmes] = useState([])
+
+
   return (
     <div>
 
